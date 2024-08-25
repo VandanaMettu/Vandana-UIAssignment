@@ -2,6 +2,9 @@ import React from "react";
 import { useState, useEffect, useRef, useMemo } from "react";
 import './AwardPoints.css';
 
+
+
+
 /**
  * @component - it display all the details related to reward points in the UI. It is a child component to the TransactionDetails component
  * @param {filteredTransactionData}  -  prop which is a Filtered Transactiosn Data which is filtered based on the customer ID given in Input
