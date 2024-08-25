@@ -1,0 +1,115 @@
+{
+    "title": "Transaction details",
+    "description": "this JSON data contains the transcation details of each customer.",
+    "transactions": [
+        {
+            "id": 1,
+            "customerName": "Tom",
+            "customerId": 1,
+            "transactionDate": "2024-06-12",
+            "transactionAmount": 100
+        },
+        {
+            "id": 2,
+            "customerName": "Ram",
+            "customerId": 2,
+            "transactionDate": "2024-07-11",
+            "transactionAmount": 200
+
+        },
+        
+        {
+            "id": 3,
+            "customerName": "Henry",
+            "customerId": 3,
+            "transactionDate": "2024-08-1",
+            "transactionAmount": 150
+
+        },
+        {
+            "id": 4,
+            "customerName": "Jhon",
+            "customerId": 4,
+            "transactionDate": "2024-06-6",
+            "transactionAmount": 112
+
+        },
+        {
+            "id": 5,
+            "customerName": "Tom",
+            "customerId": 1,
+            "transactionDate": "2024-07-12",
+            "transactionAmount": 81
+
+        },
+        {
+            "id": 6,
+            "customerName": "Tom",
+            "customerId": 1,
+            "transactionDate": "2024-08-3",
+            "transactionAmount": 51
+
+        },
+        {
+            "id": 7,
+            "customerName": "Ram",
+            "customerId": 2,
+            "transactionDate": "2024-06-1",
+            "transactionAmount": 140
+
+        },
+        {
+            "id": 8,
+            "customerName": "Ram",
+            "customerId": 2,
+            "transactionDate": "2024-08-4",
+            "transactionAmount": 20
+
+        },
+        {
+            "id": 9,
+            "customerName": "Henry",
+            "customerId": 3,
+            "transactionDate": "2024-06-2",
+            "transactionAmount": 71
+
+        },
+        {
+            "id": 10,
+            "customerName": "Henry",
+            "customerId": 3,
+            "transactionDate": "2024-07-8",
+            "transactionAmount": 30
+
+        },
+        {
+            "id": 11,
+            "customerName": "Ram",
+            "customerId": 2,
+            "transactionDate": "2024-07-10",
+            "transactionAmount": 67
+
+        },
+        {
+            "id": 12,
+            "customerName": "Ram",
+            "customerId": 2,
+            "transactionDate": "2024-06-4",
+            "transactionAmount": 180
+
+        },
+        
+        {
+            "id": 13,
+            "customerName": "Henry",
+            "customerId": 3,
+            "transactionDate": "2024-08-3",
+            "transactionAmount": 130
+
+        }
+       
+
+
+    ]
+
+}

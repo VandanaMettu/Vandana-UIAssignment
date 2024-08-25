@@ -1,0 +1,24 @@
+.awards-section{
+    color: darkblue;
+    background-color: #D0F0C0;
+    padding: 2rem 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1.2rem;
+}
+.awards-section h2,h4{
+    padding: 5px;
+    margin: 2px;
+    line-height: 2rem;
+}
+
+.list-monthly-rewardpoints{
+    margin: 2px;
+    line-height: 2rem;
+    padding: 5px;
+}
+
+.awards-section ul li{
+    font-weight: bold;
+}
