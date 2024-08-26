@@ -14,9 +14,13 @@
     margin-top: 5rem;
 }
 
+.wrapper-table{
+    overflow-x:auto;
+}
+
 .main-section{
     margin-top: 3rem;
-    margin-bottom: 8.25rem;
+    margin-bottom: 5rem;
 }
 
 table, td, th{
@@ -46,7 +50,10 @@ tr:nth-child(even){
     background-color: #D0F0C0;
 }
 
-.rewards-section{
+.rewards-section{ 
+
+
+    
     margin-bottom: 3rem;
 }
 
@@ -60,6 +67,18 @@ tr:nth-child(even){
         justify-content: center;
         align-items: center;
     }
+    .main-section{
+        margin-top: 3rem;
+        margin-bottom: 8.25rem;
+    }
     
 
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+   
+    .main-section{
+        margin-top: 3rem;
+        
+    }
 }
