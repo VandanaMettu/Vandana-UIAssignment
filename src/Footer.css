@@ -7,6 +7,13 @@
     position: sticky;
     left: 0;
     bottom: 0;
+    /* position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-color: lightseagreen; */
    
     
 }
@@ -28,3 +35,38 @@
 .footer-section p{
     text-align: center;
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .footer-section{
+       
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: white;
+        text-align: center;
+        background-color: lightseagreen; 
+       
+        
+
+        
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .footer-section{
+       
+        position: sticky;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: white;
+        text-align: center;
+        background-color: lightseagreen; 
+       
+        
+    }
+    
+}
+
