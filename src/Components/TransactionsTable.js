@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
-import AwardPoints from "./AwardPoints";
+import  {Suspense, lazy} from 'react';
 import "./TransactionsTable.css";
+const AwardPoints= lazy(()=>import("./AwardPoints"));
+
+
 /**
  * @component - displays the recors of transactions in the form of table which also has child component {AwarsPoints}
  * @param {transactionsDetails} it has all the transaction records which are passed from DashBoard component
@@ -14,6 +17,8 @@ const TransactionsTable = ({ transactionsDetails }) => {
   const [customerId, setCustomerId] = useState();
   const [listofCustomerId, setListOfCustomerId] = useState([]);
   const [count, setCount] = useState(0);
+  const[id,setId]=useState(false);
+  const [name,setName]=useState(false);
 
   useEffect(() => {
     let listofCustomers = transactionsDetails.map((item) => item.customerId);
@@ -40,18 +45,33 @@ const TransactionsTable = ({ transactionsDetails }) => {
    *  the customer ID andsetCount and setFilteredTransactionData states are data are set to 1 and fileted recors data if 
    * customerID is valid
    */
+
+  const findCustomerIdorName=()=>{
+    const fileteredData = []
+    for(let i in transactionsDetails){
+      console.log(i)
+      if(transactionsDetails[i].customerId=== Number(customerId)){
+        setId(true);
+        setCount(1);
+        fileteredData.push(transactionsDetails[i])
+        
+      }else{
+          if(transactionsDetails[i].customerName=== customerId){
+            setName(true);
+            setCount(1);
+            fileteredData.push(transactionsDetails[i])
+          }
+        }
+      
+    }
+    setFilteredTransactionData(fileteredData);
+
+  }
   const onSearchHandler = () => {
     setIsSearched(true);
     setMonthlyRewardPoints({});
-    const fileteredData = transactionsDetails.filter(
-      (record) => record.customerId == customerId
-    );
-    listofCustomerId.forEach((item) => {
-      if (item + "" == customerId) {
-        setCount(1);
-      }
-    });
-    setFilteredTransactionData(fileteredData);
+    findCustomerIdorName(); 
+    
   };
 
   /**
@@ -62,6 +82,8 @@ const TransactionsTable = ({ transactionsDetails }) => {
     setFilteredTransactionData(transactionsDetails);
     setCustomerId("");
     setMonthlyRewardPoints({});
+    setId(false);
+    setName(false);
   };
 
   /**
@@ -69,7 +91,7 @@ const TransactionsTable = ({ transactionsDetails }) => {
    */
 
   const tansactionsRows = (
-    count == 1 ? filteredTransactionData : transactionsDetails
+    count === 1 ? filteredTransactionData : transactionsDetails
   ).map((transaction) => {
     return (
       <tr key={transaction.id}>
@@ -87,7 +109,7 @@ const TransactionsTable = ({ transactionsDetails }) => {
       <section className="search-section">
         <input
           type="text"
-          placeholder="Enter customer Id"
+          placeholder="Enter customer Id or customer name"
           onChange={onChangeInputHandler}
           value={customerId}
         />
@@ -101,17 +123,24 @@ const TransactionsTable = ({ transactionsDetails }) => {
         </div>
       </section>
       <main className="main-section">
+        
         <section className="rewards-section">
           {isSearched && (
-            <AwardPoints
-              filteredTransactionData={filteredTransactionData}
-              monthlyRewardPoints={monthlyRewardPoints}
-              setMonthlyRewardPoints={setMonthlyRewardPoints}
-              isSearched={isSearched}
-              count={count}
-            />
+            <Suspense fallback={<p>Data is Loading....</p>}>
+              <AwardPoints
+                filteredTransactionData={filteredTransactionData}
+                monthlyRewardPoints={monthlyRewardPoints}
+                setMonthlyRewardPoints={setMonthlyRewardPoints}
+                isSearched={isSearched}
+                count={count}
+                id={id}
+                name={name}
+              />
+            </Suspense>
           )}
         </section>
+       
+        
         <table className="transaction-table">
           <thead>
             <tr>

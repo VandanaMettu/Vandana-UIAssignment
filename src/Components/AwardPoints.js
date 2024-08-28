@@ -21,6 +21,8 @@ const AwardPoints = ({
   setMonthlyRewardPoints,
   count,
   isSearched,
+  id,
+  name,
  
   
  
@@ -113,7 +115,7 @@ const AwardPoints = ({
         listofRecords.push(
           <li key={i}>
             The Mothly Reward Points for the Month of {i} is{" "}
-            {monthlyRewardPoints[i]}
+            {Number(monthlyRewardPoints[i]) === monthlyRewardPoints[i] && monthlyRewardPoints[i] % 1 !== 0 ? monthlyRewardPoints[i].toFixed(3): monthlyRewardPoints[i]}
           </li>
         );
       }
@@ -130,7 +132,7 @@ const AwardPoints = ({
       totalRewardPoints += monthlyRewardPoints[i];
     }
    
-    return <h4>You Have Won total Reward Points of {totalRewardPoints}</h4>;
+    return <h4>You Have Won total Reward Points of {Number(totalRewardPoints) === totalRewardPoints && totalRewardPoints % 1 !== 0  ?totalRewardPoints.toFixed(3) :totalRewardPoints }</h4>;
   };
 
   const displayErrorMessage= ()=>{
@@ -152,7 +154,8 @@ const AwardPoints = ({
     <section className=" awards-section">
       
       {(count==1) && displayRewardMessage()}
-      {(count==0 && isSearched===true) && <p>Please Enter a Valid Customer ID</p>}
+      {console.log(id,name,count)}
+      {(count==0 && isSearched===true ) && <p>Please Enter a valid Input Value</p>}
     
     </section>
     </>

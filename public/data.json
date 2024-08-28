@@ -7,7 +7,7 @@
             "customerName": "Tom",
             "customerId": 1,
             "transactionDate": "2024-06-12",
-            "transactionAmount": 100
+            "transactionAmount": 100.5
         },
         {
             "id": 2,

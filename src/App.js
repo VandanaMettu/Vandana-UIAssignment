@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import DashBoard from './DashBoard';
-import Header from './Header';
-import Footer from './Footer';
+import DashBoard from './Components/DashBoard';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
 
 
 /**
