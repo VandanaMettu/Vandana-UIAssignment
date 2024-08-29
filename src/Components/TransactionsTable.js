@@ -17,8 +17,7 @@ const TransactionsTable = ({ transactionsDetails }) => {
   const [customerId, setCustomerId] = useState();
   const [listofCustomerId, setListOfCustomerId] = useState([]);
   const [count, setCount] = useState(0);
-  const[id,setId]=useState(false);
-  const [name,setName]=useState(false);
+
 
   useEffect(() => {
     let listofCustomers = transactionsDetails.map((item) => item.customerId);
@@ -51,13 +50,13 @@ const TransactionsTable = ({ transactionsDetails }) => {
     for(let i in transactionsDetails){
       console.log(i)
       if(transactionsDetails[i].customerId=== Number(customerId)){
-        setId(true);
+      
         setCount(1);
         fileteredData.push(transactionsDetails[i])
         
       }else{
           if(transactionsDetails[i].customerName=== customerId){
-            setName(true);
+           
             setCount(1);
             fileteredData.push(transactionsDetails[i])
           }
@@ -133,8 +132,7 @@ const TransactionsTable = ({ transactionsDetails }) => {
                 setMonthlyRewardPoints={setMonthlyRewardPoints}
                 isSearched={isSearched}
                 count={count}
-                id={id}
-                name={name}
+                
               />
             </Suspense>
           )}
