@@ -21,11 +21,6 @@ const AwardPoints = ({
   setMonthlyRewardPoints,
   count,
   isSearched,
-  id,
-  name,
- 
-  
- 
 }) => {
   const months = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
   const monthCodes = [
@@ -154,7 +149,7 @@ const AwardPoints = ({
     <section className=" awards-section">
       
       {(count==1) && displayRewardMessage()}
-      {console.log(id,name,count)}
+     
       {(count==0 && isSearched===true ) && <p>Please Enter a valid Input Value</p>}
     
     </section>
