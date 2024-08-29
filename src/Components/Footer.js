@@ -1,7 +1,5 @@
 import React from "react";
 import './Footer.css';
-import { useState, useEffect } from "react";
-
 /**
  * @component {Footer} - which displays the Footer
  * @returns returns the JSX code whichh has footer details
